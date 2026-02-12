@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "styrene-plugins",
+  "description": "Styrene mesh network plugins and tools",
+  "owner": {
+    "name": "styrene-lab"
+  },
+  "plugins": [
+    {
+      "name": "styrene-tools",
+      "description": "Mesh network tools, fleet operations, and development conventions",
+      "version": "0.1.0",
+      "author": {
+        "name": "styrene-lab"
+      },
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

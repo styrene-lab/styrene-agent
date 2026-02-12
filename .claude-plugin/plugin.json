@@ -1,0 +1,11 @@
+{
+  "name": "styrene-tools",
+  "version": "0.1.0",
+  "description": "Styrene mesh network tools, workflows, and conventions",
+  "author": {
+    "name": "styrene-lab",
+    "url": "https://github.com/styrene-lab"
+  },
+  "repository": "https://github.com/styrene-lab/styrene-plugin",
+  "license": "MIT"
+}
