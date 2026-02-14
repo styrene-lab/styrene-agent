@@ -61,6 +61,7 @@ description: One-line description for skill discovery. Include invocation hints.
 |-------|------|---------|
 | date-context | Tool-ready | Authoritative date from system clock |
 | distill | Pure guidance | Session context distillation for handoff |
+| python | Pure guidance | Python dev conventions: project setup, pytest, ruff, mypy, packaging, CI/CD |
 | visualizer | Hybrid | Mermaid diagram management |
 | cleave | Hybrid | Recursive task decomposition |
 
