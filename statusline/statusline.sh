@@ -43,11 +43,17 @@ reset='\033[0m'
 bar=$(printf "%${filled}s" | tr ' ' '█')$(printf "%${empty}s" | tr ' ' '░')
 ctx_display="${color}${bar} ${ctx_pct}%${reset}"
 
+# Working directory (fall back to $PWD)
+cwd=$(echo "$input" | jq -r '.working_directory // empty')
+[ -z "$cwd" ] && cwd="$PWD"
+cwd="${cwd/#$HOME/\~}"
+
 # Build output
 parts=()
 [[ -n "${branch:-}" ]] && parts+=("${branch}")
 parts+=("${model}")
 parts+=("CTX_PLACEHOLDER")
+[[ -n "$cwd" ]] && parts+=("${cwd}")
 [[ "$mcp_count" -gt 0 ]] && parts+=("mcp:${mcp_count}")
 
 # Join with dimmed separator
