@@ -11,9 +11,11 @@ Recursive decomposition system for complex directives. Splits tasks along domain
 
 ## Installation
 
+Requires `styrene-cleave >= 0.9.5`:
+
 ```bash
 pipx install styrene-cleave   # or: pip install styrene-cleave
-cleave --version              # verify
+cleave --version              # verify (must be >= 0.9.5)
 ```
 
 ## Decision Pipeline
@@ -309,7 +311,7 @@ This maps the directive to permission bundles (python, node, docker, database, e
 
 ```bash
 cleave assess -d "directive" [-f json|yaml]      # Complexity assessment
-cleave match -d "directive"                       # Pattern matching (7 core patterns)
+cleave match -d "directive"                       # Pattern matching (9 core patterns)
 cleave probe -d "directive" [-r /repo]            # Socratic codebase interrogation
 cleave init -d "directive" -c '["A","B"]'         # Initialize workspace
 cleave context -m .cleave/manifest.yaml           # Reconstruct full context
@@ -321,6 +323,7 @@ cleave run -d "directive" -r /repo [opts]          # Autonomous orchestration
 cleave run -d "directive" -r /repo --confirm       # Plan then pause for review
 cleave run --resume .cleave-<name>/                # Resume from --confirm or interrupt
 cleave config show                                 # Settings management
+cleave install-skill                                # Install skill to ~/.claude/skills/
 ```
 
 ### `cleave run` flags
