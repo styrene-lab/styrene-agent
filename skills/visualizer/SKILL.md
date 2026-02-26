@@ -30,23 +30,54 @@ Full support for all Mermaid diagram types:
 | **State Diagram** | State machines, workflow states | `stateDiagram-v2` |
 | **Gantt Chart** | Project timelines, schedules | `gantt` |
 | **Git Graph** | Branch strategies, version history | `gitGraph` |
+| **User Journey** | UX flows, customer journeys | `journey` |
 | **Pie Chart** | Proportions, distributions | `pie` |
+| **Quadrant Chart** | Priority matrices, 2x2 frameworks | `quadrantChart` |
 | **Timeline** | Historical events, roadmaps | `timeline` |
 
 ## Usage Patterns
 
 ### Reading Diagrams
 
+**From files:**
 ```markdown
-Read and display the architecture diagram from docs/src/architecture-decisions.md
+Read and display the architecture diagram from docs/architecture.md
+```
+
+**From repositories:**
+```markdown
 Show me all Mermaid diagrams in the documentation
+```
+
+**Selective extraction:**
+```markdown
+Extract just the ER diagram from DIAGRAMS.md
+```
+
+### Understanding Diagrams
+
+**Analyze structure:**
+```markdown
+Explain the relationships shown in this class diagram:
+[paste diagram]
+```
+
+**Identify patterns:**
+```markdown
+What design patterns are evident in this flowchart?
+```
+
+**Find issues:**
+```markdown
+Review this ER diagram for normalization issues
 ```
 
 ### Writing Diagrams
 
 **From code:**
 ```markdown
-Generate a class diagram from these Python models
+Generate a class diagram from these Python models:
+[paste code]
 ```
 
 **From specifications:**
@@ -54,11 +85,21 @@ Generate a class diagram from these Python models
 Create a sequence diagram showing the RPC request/response flow
 ```
 
+**From data:**
+```markdown
+Create a Gantt chart for these milestones:
+- Q1: Infrastructure setup
+- Q2: Feature development
+- Q3: Testing and hardening
+- Q4: Production rollout
+```
+
 ### Visualizing Diagrams
 
 **HTML rendering (recommended for complex diagrams):**
 ```markdown
 Render this ER diagram as HTML
+[paste mermaid code or describe diagram]
 ```
 
 The skill uses a rendering template at `skills/visualizer/_templates/mermaid-render.html` to generate standalone HTML files with:
@@ -125,6 +166,22 @@ sequenceDiagram
     API-->>Client: JWT token
 ```
 
+### ER Diagram
+
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    PRODUCT ||--o{ LINE-ITEM : includes
+```
+
+**Cardinality:**
+- `||--||` - One to one
+- `||--o{` - One to many
+- `}o--o{` - Many to many
+- `||--o|` - One to zero or one
+- `}o--||` - Many to one
+
 ### Subgraphs and Grouping
 
 ```mermaid
@@ -141,6 +198,16 @@ flowchart TB
 
     B --> C
     C --> D
+```
+
+### Styling and Theming
+
+```mermaid
+flowchart LR
+    A[Input]:::highlighted --> B[Process]
+    B --> C[Output]:::highlighted
+
+    classDef highlighted fill:#f96,stroke:#333,stroke-width:4px
 ```
 
 ## Rendering Workflow

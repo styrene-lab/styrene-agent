@@ -125,12 +125,12 @@ Adding GMKtec and Raspberry Pi to styrened test fleet.
 
 Use both: distill for the next session, session_log for the historical record.
 
-### With date-context
+### With chronos
 
-Use the `date-context` skill to get accurate dates for entry headers:
+Use the `chronos` skill to get accurate dates for entry headers:
 
 ```bash
-skills/date-context/date-context.sh
+chronos.sh
 ```
 
 ## Multi-Repo Session Logs

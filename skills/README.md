@@ -55,26 +55,39 @@ description: One-line description for skill discovery. Include invocation hints.
 
 ## Current Inventory
 
-### Universal (ported from coe-agent)
+### Shared (canonical source — downstream consumers pull from here)
+
+Skills that are domain-neutral and shared across plugin ecosystems. This repo is
+the source of truth. Downstream plugins (e.g., coe-agent) vendor copies and can
+sync updates via CI.
 
 | Skill | Type | Purpose |
 |-------|------|---------|
-| date-context | Tool-ready | Authoritative date from system clock |
+| chronos | Tool-ready | Authoritative date/time context from system clock |
+| cleave | Hybrid | Recursive task decomposition via CLI |
 | distill | Pure guidance | Session context distillation for handoff |
+| session-log | Pure guidance | Append-only session tracking for memory continuity |
+| visualizer | Hybrid | Mermaid diagram management and rendering |
+
+### Development
+
+Language and toolchain conventions for styrene-lab projects.
+
+| Skill | Type | Purpose |
+|-------|------|---------|
 | git | Pure guidance | Conventional commits, semver, branch naming, tagging, changelogs |
 | python | Pure guidance | Python dev conventions: project setup, pytest, ruff, mypy, packaging, CI/CD |
 | rust | Pure guidance | Rust dev conventions: Cargo, clippy, rustfmt, testing, Zellij WASM plugins |
-| visualizer | Hybrid | Mermaid diagram management |
-| cleave | Hybrid | Recursive task decomposition |
 
-### Styrene-Specific
+### Domain-Specific
+
+Skills tied to styrene mesh network infrastructure.
 
 | Skill | Type | Purpose |
 |-------|------|---------|
 | bare-metal-ops | Pure guidance | SSH fleet operations, device registry, remote deployment |
 | rns-operations | Pure guidance | Reticulum/LXMF config, mesh diagnostics, wire protocol |
 | styrene-topology | Pure guidance | System architecture, component map, device fleet |
-| session-log | Pure guidance | Append-only session tracking for memory continuity |
 
 ## Anti-Patterns
 

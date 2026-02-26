@@ -106,3 +106,19 @@ Key files for continuation:
 - Run `/distill` before switching to a different task
 - The distillation is meant to be read by Claude in a fresh session
 - Keep the handoff directive simple - the distillation file contains the detail
+
+## Example
+
+User runs `/distill` after implementing a feature:
+
+```
+Distillation saved to: .claude/distillations/2026-02-01-143022-styrened-bare-metal.md
+
+To continue in a fresh session, copy this prompt:
+
+---
+Continue from distillation: .claude/distillations/2026-02-01-143022-styrened-bare-metal.md
+
+Read the distillation file and confirm you understand the context before proceeding.
+---
+```
