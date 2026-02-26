@@ -1,0 +1,10 @@
+{
+  "name": "styrene-tools",
+  "version": "0.5.0",
+  "description": "Styrene mesh network tools, shared skills, and development conventions",
+  "keywords": ["pi-package"],
+  "pi": {
+    "skills": ["./skills"],
+    "prompts": ["./prompts"]
+  }
+}
